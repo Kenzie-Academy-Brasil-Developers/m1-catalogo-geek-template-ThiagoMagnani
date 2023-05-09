@@ -70,7 +70,6 @@ const productsArray = [
 ];
 const actionFiguresArray = [];
 const paintingsArray = [];
-
 const body = document.querySelector('body');
 const main = document.createElement('main');
 const sectionPaintings = document.createElement('section');
@@ -80,15 +79,15 @@ const listAction = document.createElement('ul');
 const nameSectionPaintings = document.createElement('h2');
 const nameSectionActions = document.createElement('h2');
 
-body.appendChild(main);
-main.append(sectionPaintings, sectionAction);
-sectionPaintings.append(nameSectionPaintings, listPaintings);
-sectionAction.append(nameSectionActions, listAction);
-
-nameSectionPaintings.innerText = 'Paintings';
-nameSectionActions.innerText = 'Action Figures';
-
 function separateItens(productsArray){
+
+  body.appendChild(main);
+  main.append(sectionPaintings, sectionAction);
+  sectionPaintings.append(nameSectionPaintings, listPaintings);
+  sectionAction.append(nameSectionActions, listAction);
+
+  nameSectionPaintings.innerText = 'Paintings';
+  nameSectionActions.innerText = 'Action Figures';
 
   for(let i = 0; i < productsArray.length; i++){
   
@@ -107,9 +106,9 @@ function separateItens(productsArray){
       priceProduct.innerText = productsArray[i].price;
       paintingsArray.push[i];
 
-      const ProductPaintings = document.createElement('li');
-      ProductPaintings.append(imageProduct, nameProduct, priceProduct);
-      listPaintings.appendChild(ProductPaintings);
+      const productPaintings = document.createElement('li');
+      productPaintings.append(imageProduct, nameProduct, priceProduct);
+      listPaintings.appendChild(productPaintings);
 
     } else if (productsArray[i].type === 'Action Figures'){
 
@@ -118,9 +117,9 @@ function separateItens(productsArray){
       priceProduct.innerText = productsArray[i].price;
       actionFiguresArray.push[i];
       
-      const ProductAction = document.createElement('li');
-      ProductAction.append(imageProduct, nameProduct, priceProduct);
-      listAction.appendChild(ProductAction);
+      const productAction = document.createElement('li');
+      productAction.append(imageProduct, nameProduct, priceProduct);
+      listAction.appendChild(productAction);
 
     }
   }
